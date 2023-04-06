@@ -1,0 +1,17 @@
+G:\2 курс\лабы\house\house\bin\Debug\netcoreapp3.1\house.exe
+G:\2 курс\лабы\house\house\bin\Debug\netcoreapp3.1\house.deps.json
+G:\2 курс\лабы\house\house\bin\Debug\netcoreapp3.1\house.runtimeconfig.json
+G:\2 курс\лабы\house\house\bin\Debug\netcoreapp3.1\house.runtimeconfig.dev.json
+G:\2 курс\лабы\house\house\bin\Debug\netcoreapp3.1\house.dll
+G:\2 курс\лабы\house\house\bin\Debug\netcoreapp3.1\house.pdb
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.Form1.resources
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.csproj.GenerateResource.cache
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.GeneratedMSBuildEditorConfig.editorconfig
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.AssemblyInfoInputs.cache
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.AssemblyInfo.cs
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.csproj.CoreCompileInputs.cache
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.dll
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.pdb
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.genruntimeconfig.cache
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.Properties.Resources.resources
+G:\2 курс\лабы\house\house\obj\Debug\netcoreapp3.1\house.csproj.AssemblyReference.cache

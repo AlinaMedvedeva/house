@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rootNode text ="РП-1" vid="0" id="3">
+	<Node text="ТП-1" vid="1" id ="1"/>
+	<Node text="ТП-2" vid="1" id ="2"/>
+	<Node text="ТП-3" vid="1" id ="4"/>
+	<Node text="ТП-4" vid="1" id ="5"/>
+	<Node text="ТП-5" vid="1" id ="6"/>
+</rootNode>
