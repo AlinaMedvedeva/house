@@ -39,5 +39,17 @@ namespace house
                 }
             }
         }
+
+        public void change(ListViewItem lw, TreeNode targetNode)
+        {
+            String s = lw.Text;
+            foreach(Home h in lst)
+            {
+                if(h.address.Equals(s))
+                {
+                    h.connect = Convert.ToInt32(targetNode.Tag);
+                }
+            }
+        }
     }
 }

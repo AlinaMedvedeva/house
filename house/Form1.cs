@@ -21,6 +21,7 @@ namespace house
         TreeNode dragNode = null;
         bool NodeMode = false;
         bool ItemMode = false;
+        bool move = false;
         public Form1()
         {
             InitializeComponent();
@@ -113,6 +114,7 @@ namespace house
         private void ListHome_MouseDown(object sender, MouseEventArgs e)
         {
             dragItem = ListHome.GetItemAt(e.X, e.Y);
+            ItemMode = true;
         }
 
         private void ListHome_MouseUp(object sender, MouseEventArgs e)
@@ -127,21 +129,35 @@ namespace house
             dragNode = null;
             ItemMode = false;
             NodeMode = false;
+            move = false;
         }
 
         private void ListHome_MouseMove(object sender, MouseEventArgs e)
         {
-            if ((!ItemMode) && (dragItem != null))
+            if ((ItemMode) && (dragItem != null))
+            {
                 this.Cursor = AdvancedCursor.Create("HomeCursor.cur");
-            ItemMode = true;
+            }
+            move = true;
         }
 
         private void treeView1_MouseMove(object sender, MouseEventArgs e)
         {
-            if ((!NodeMode) && (dragNode != null))
+            if (NodeMode && dragNode != null && dragItem == null)
             {
                 this.Cursor = AdvancedCursor.Create("MolnCursor.cur");
-                NodeMode = true;
+                //Cursor.Current = new Cursor("G:\\2 курс\\лабы\\house\\house\\bin\\Debug\\netcoreapp3.1\\MolnCursor.cur");
+                move = true;
+            }
+            else
+            {
+                if ((ItemMode) && (dragItem != null))
+                {
+                    this.Cursor = AdvancedCursor.Create("HomeCursor.cur");
+                    move = true;
+                }
+                else
+                    move = false;
             }
         }
 
@@ -150,12 +166,15 @@ namespace house
             TreeNode targetNode = treeView1.GetNodeAt(e.X, e.Y);
             if(targetNode != null)
             {
-                if(ItemMode)
+                if(ItemMode && move)
                 {
+                    ListHome.BeginUpdate();
+                    hc.change(dragItem, targetNode);
                     dragItem.Remove();
                     ListHome.Refresh();
+                    ListHome.EndUpdate();
                 }
-                if(NodeMode)
+                if(NodeMode && move && (dragNode != targetNode || dragItem != null))
                 {
                     targetNode.Nodes.Add(dragNode.Clone() as TreeNode);
                     dragNode.Remove();
@@ -166,9 +185,14 @@ namespace house
             CancelDrag();
         }
 
+
         private void treeView1_MouseDown(object sender, MouseEventArgs e)
         {
-            dragNode = treeView1.GetNodeAt(e.X, e.Y);
+            if (!ItemMode)
+            {
+                NodeMode = true;
+                dragNode = treeView1.GetNodeAt(e.X, e.Y);
+            }
         }
 
         private void panel2ToolStripMenuItem_Click(object sender, EventArgs e)
